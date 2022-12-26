@@ -1,7 +1,36 @@
 .game {
     display: grid;
+    text-decoration: none;
+    color: #fff;
+    width: 320px;
+    height: 300px;
+    background-color: #242529;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
 }
 
 .gameImg {
-    background: url();
+    height: 170px;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.gameTitle {
+    font-size: 18px;
+    font-weight: 700;
+}
+.gameBuy {
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+}
+
+.gameTag {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }

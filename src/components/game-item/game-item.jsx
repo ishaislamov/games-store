@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.module.scss'
+import axios from 'axios';
 
-export const GameItem  = ({
-    title = '',
-    price = 0,
-    img = '',
-    id = '',
-    desc = '',
-    tag =[]
-}) => {
+export const GameItem  = ({ game }) => {
+
   return (
     <>
     <div className={styles.game}>
         <div className={styles.gameImg}>
-            <img src={img} alt="" />
+            <img className={styles.gameImg} src={game.image} alt="" />
         </div>
-        <h2 className={styles.gameTitle}>{title}</h2>
+        <h2 className={styles.gameTitle}>{game.title}</h2>
         <ul className={styles.gameTags}>
-            <li className={styles.gameTag}>{tag}</li>
+            <li className={styles.gameTag}>{game.genres}</li>
         </ul>
-        <span className={styles.gamePrice}>{price}</span>
-        <button className={styles.gameCart}>В корзину</button>
+        <div className={styles.gameBuy}>
+            <span className={styles.gamePrice}>{game.price}</span>
+            <button className={styles.gameCart}>В корзину</button>
+        </div>
     </div>
     </>
 )
