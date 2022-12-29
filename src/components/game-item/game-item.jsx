@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss'
 import axios from 'axios';
+import { Button } from '../button/button';
 
 export const GameItem  = ({ game }) => {
-
+const onClick = () => {
+    return
+}
   return (
     <>
     <div className={styles.game}>
@@ -11,12 +14,15 @@ export const GameItem  = ({ game }) => {
             <img className={styles.gameImg} src={game.image} alt="" />
         </div>
         <h2 className={styles.gameTitle}>{game.title}</h2>
-        <ul className={styles.gameTags}>
-            <li className={styles.gameTag}>{game.genres}</li>
-        </ul>
+        <div className={styles.gameTags}>
+            {game.genres.map(g => (
+                    <span className={styles.gameTag}>{g}</span>
+            ))}
+        </div>
         <div className={styles.gameBuy}>
             <span className={styles.gamePrice}>{game.price}</span>
-            <button className={styles.gameCart}>В корзину</button>
+            <div className={styles.gameCart}>
+            </div>
         </div>
     </div>
     </>
